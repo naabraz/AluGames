@@ -1,5 +1,4 @@
 import com.google.gson.Gson
-import java.lang.NullPointerException
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
@@ -26,13 +25,35 @@ fun main() {
     val gson = Gson()
     val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
 
-    try {
-        val meuJogo = Jogo(
+    var meuJogo:Jogo? = null
+
+    val resultado = runCatching {
+        meuJogo = Jogo(
             meuInfoJogo.info.title,
             meuInfoJogo.info.thumb)
+    }
+
+    resultado.onFailure {
+        print("Jogo inexistente. Tente outro id.")
+    }
+
+    resultado.onSuccess {
+        println("Deseja inserir uma descrição personalizada? S/N")
+
+        val opcao = leitura.nextLine()
+
+        if (opcao.equals("s", true)) {
+            println("Insira a descrição personalizada para o jogo:")
+            val descricaoPersonalizada = leitura.nextLine()
+            meuJogo?.descricao = descricaoPersonalizada
+        } else {
+            meuJogo?.descricao = meuJogo?.titulo
+        }
 
         println(meuJogo)
-    } catch (ex: NullPointerException) {
-        print("Jogo inexistente. Tente outro id.")
+    }
+
+    resultado.onSuccess {
+        println("Busca finalizada com sucesso.")
     }
 }
