@@ -1,8 +1,7 @@
-import com.google.gson.Gson
-import java.net.URI
-import java.net.http.HttpClient
-import java.net.http.HttpRequest
-import java.net.http.HttpResponse.BodyHandlers
+package br.com.nataliabraz.alugames.principal
+
+import br.com.nataliabraz.alugames.modelo.Jogo
+import br.com.nataliabraz.alugames.servicos.ConsumoApi
 import java.util.*
 
 fun main() {
@@ -10,31 +9,20 @@ fun main() {
     println("Digite o código de jogo para buscar:")
     val busca = leitura.nextLine()
 
-    val endereco = "https://www.cheapshark.com/api/1.0/games?id=$busca"
+    val buscaApi = ConsumoApi()
+    val informacaoJogo = buscaApi.buscaJogo(busca)
 
-    val client: HttpClient = HttpClient.newHttpClient()
-    val request = HttpRequest.newBuilder()
-        .uri(URI.create(endereco))
-        .build()
-
-    val response = client
-        .send(request, BodyHandlers.ofString())
-
-    val json = response.body()
-
-    val gson = Gson()
-    val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
-
-    var meuJogo:Jogo? = null
+    var meuJogo: Jogo? = null
 
     val resultado = runCatching {
         meuJogo = Jogo(
-            meuInfoJogo.info.title,
-            meuInfoJogo.info.thumb)
+            informacaoJogo.info.title,
+            informacaoJogo.info.thumb
+        )
     }
 
     resultado.onFailure {
-        print("Jogo inexistente. Tente outro id.")
+        print("br.com.nataliabraz.alugames.modelo.Jogo inexistente. Tente outro id.")
     }
 
     resultado.onSuccess {
