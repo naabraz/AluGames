@@ -5,7 +5,7 @@ data class Jogo(
     val capa: String) {
     var descricao: String? = null
     override fun toString(): String {
-        return "Meu br.com.nataliabraz.alugames.modelo.Jogo:\n" +
+        return "Meu Jogo:\n" +
                 "Título: $titulo \n" +
                 "Capa: $capa \n" +
                 "Descrição: $descricao \n"

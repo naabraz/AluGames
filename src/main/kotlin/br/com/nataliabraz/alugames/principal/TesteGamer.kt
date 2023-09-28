@@ -1,3 +1,5 @@
+package br.com.nataliabraz.alugames.principal
+
 import br.com.nataliabraz.alugames.modelo.Gamer
 
 fun main () {
@@ -5,16 +7,22 @@ fun main () {
 
     val gamer2 = Gamer(
         "Bia",
-        "bia@email.com",
+        "anabeatriz@email.com",
         "08/03/2002",
         "superbia")
 
     gamer1.let {
         it.dataNascimento = "04/01/1991"
         it.usuario = "nat"
-        it.idInterno= "nat1234"
+    }.also {
+        println(gamer1.idInterno)
     }
 
     println(gamer1)
+
+    gamer1.usuario = "Jacque"
+
+    println(gamer1)
+
     println(gamer2)
 }
