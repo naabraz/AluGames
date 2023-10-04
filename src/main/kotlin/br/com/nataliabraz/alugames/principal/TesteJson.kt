@@ -5,10 +5,18 @@ import br.com.nataliabraz.alugames.servicos.ConsumoApi
 fun main() {
     val consumo = ConsumoApi()
     val listaGamers = consumo.buscaGamers()
-    val jogoApi = consumo.buscaJogo("151")
-    val jogoJson = consumo.buscaJogosJson()
+    val listaJogoJson = consumo.buscaJogosJson()
 
-    println(listaGamers)
-    println(jogoApi)
-    println(jogoJson)
+//    println(listaGamers)
+//    println(jogoJson)
+
+    val gamerCaroline = listaGamers[3]
+    val jogoResidentVillage = listaJogoJson[10]
+
+    println(gamerCaroline)
+    println(jogoResidentVillage)
+
+    val aluguel = gamerCaroline.alugaJogo(jogoResidentVillage)
+
+    println(aluguel)
 }
