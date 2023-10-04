@@ -1,9 +1,8 @@
 package br.com.nataliabraz.alugames.servicos
 
-import br.com.nataliabraz.alugames.modelo.Gamer
-import br.com.nataliabraz.alugames.modelo.InfoGamerJson
-import br.com.nataliabraz.alugames.modelo.InfoJogo
+import br.com.nataliabraz.alugames.modelo.*
 import br.com.nataliabraz.alugames.utilitario.criaGamer
+import br.com.nataliabraz.alugames.utilitario.criaJogo
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.net.URI
@@ -31,6 +30,18 @@ class ConsumoApi {
         val gson = Gson()
 
         return gson.fromJson(json, InfoJogo::class.java)
+    }
+
+    fun buscaJogosJson(): List<Jogo> {
+        val endereco = "https://raw.githubusercontent.com/jeniblodev/arquivosJson/main/jogos.json"
+
+        val json = consomeDados(endereco)
+        val gson = Gson()
+
+        val meuJogoTipo = object : TypeToken<List<InfoJogoJson>>() {}.type
+        val listaJogo: List<InfoJogoJson> = gson.fromJson(json, meuJogoTipo)
+
+        return listaJogo.map { infoJogoJson -> infoJogoJson.criaJogo() }
     }
 
     fun buscaGamers(): List<Gamer> {

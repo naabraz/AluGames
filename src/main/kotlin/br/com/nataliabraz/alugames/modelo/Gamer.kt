@@ -4,7 +4,9 @@ import java.lang.IllegalArgumentException
 import java.util.Scanner
 import kotlin.random.Random
 
-data class Gamer(var nome: String, var email: String) {
+data class Gamer(
+    var nome: String,
+    var email: String) {
     var dataNascimento: String? = null
 
     var usuario: String? = null
