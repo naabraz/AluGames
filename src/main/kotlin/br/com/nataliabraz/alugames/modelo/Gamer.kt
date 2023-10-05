@@ -22,6 +22,7 @@ data class Gamer(
         private set
 
     val jogosBuscados = mutableListOf<Jogo?>()
+    val jogosAlugados = mutableListOf<Aluguel>()
 
     constructor(nome: String,
                 email: String,
@@ -63,7 +64,11 @@ data class Gamer(
         jogo: Jogo,
         periodo: Periodo): Aluguel {
 
-        return Aluguel(this, jogo, periodo)
+        val aluguel = Aluguel(this, jogo, periodo)
+
+        jogosAlugados.add(aluguel)
+
+        return aluguel
     }
 
     companion object {

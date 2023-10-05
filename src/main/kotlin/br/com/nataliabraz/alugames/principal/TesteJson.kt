@@ -14,12 +14,19 @@ fun main() {
 
     val gamerCaroline = listaGamers[3]
     val jogoResidentVillage = listaJogoJson[10]
+    val jogoSpiderMan = listaJogoJson[13]
+    val jogoTheLastOfUs = listaJogoJson[2]
 
-    println(gamerCaroline)
-    println(jogoResidentVillage)
+//    println(gamerCaroline)
+//    println(jogoResidentVillage)
 
-    val periodo = Periodo(LocalDate.now(), LocalDate.now().plusDays(7))
-    val aluguel = gamerCaroline.alugaJogo(jogoResidentVillage, periodo)
+    val periodo1 = Periodo(LocalDate.now(), LocalDate.now().plusDays(7))
+    val periodo2 = Periodo(LocalDate.now(), LocalDate.now().plusDays(3))
+    val periodo3 = Periodo(LocalDate.now(), LocalDate.now().plusDays(10))
 
-    println(aluguel)
+    gamerCaroline.alugaJogo(jogoResidentVillage, periodo1)
+    gamerCaroline.alugaJogo(jogoSpiderMan, periodo2)
+    gamerCaroline.alugaJogo(jogoTheLastOfUs, periodo3)
+
+    println(gamerCaroline.jogosAlugados)
 }
