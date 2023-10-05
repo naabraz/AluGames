@@ -1,7 +1,6 @@
 package br.com.nataliabraz.alugames.modelo
 
 import java.lang.IllegalArgumentException
-import java.time.LocalDate
 import java.util.Scanner
 import kotlin.random.Random
 
@@ -69,6 +68,12 @@ data class Gamer(
         jogosAlugados.add(aluguel)
 
         return aluguel
+    }
+
+    fun alugueisNoMes(mes: Int): List<Jogo> {
+        return jogosAlugados
+            .filter { aluguel -> aluguel.periodo.dataInicial.month.value == mes }
+            .map { aluguel -> aluguel.jogo }
     }
 
     companion object {
