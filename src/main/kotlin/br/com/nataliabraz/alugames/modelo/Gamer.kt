@@ -1,6 +1,7 @@
 package br.com.nataliabraz.alugames.modelo
 
 import java.lang.IllegalArgumentException
+import java.time.LocalDate
 import java.util.Scanner
 import kotlin.random.Random
 
@@ -58,8 +59,11 @@ data class Gamer(
         }
     }
 
-    fun alugaJogo(jogo: Jogo): Aluguel {
-        return Aluguel(this, jogo)
+    fun alugaJogo(
+        jogo: Jogo,
+        periodo: Periodo): Aluguel {
+
+        return Aluguel(this, jogo, periodo)
     }
 
     companion object {
