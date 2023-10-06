@@ -1,6 +1,7 @@
 package br.com.nataliabraz.alugames.principal
 
 import br.com.nataliabraz.alugames.modelo.Periodo
+import br.com.nataliabraz.alugames.modelo.PlanoAssinatura
 import br.com.nataliabraz.alugames.servicos.ConsumoApi
 import java.time.LocalDate
 
@@ -30,6 +31,16 @@ fun main() {
     gamerCaroline.alugaJogo(jogoTheLastOfUs, periodo3)
     gamerCaroline.alugaJogo(jogoSpiderMan, periodo4)
 
-    println(gamerCaroline.jogosAlugados)
+//    println(gamerCaroline.jogosAlugados)
 //    println(gamerCaroline.alugueisNoMes(9))
+
+    val gamerCamila = listaGamers[5]
+    gamerCamila.plano = PlanoAssinatura("PRATA", 9.90, 3)
+
+    gamerCamila.alugaJogo(jogoResidentVillage, periodo1)
+    gamerCamila.alugaJogo(jogoSpiderMan, periodo2)
+    gamerCamila.alugaJogo(jogoTheLastOfUs, periodo3)
+    gamerCamila.alugaJogo(jogoTheLastOfUs, periodo3)
+
+    println(gamerCamila.jogosAlugados)
 }

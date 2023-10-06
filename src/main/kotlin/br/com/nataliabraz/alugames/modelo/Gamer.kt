@@ -20,7 +20,7 @@ data class Gamer(
     var idInterno: String? = null
         private set
 
-    var plano: PlanoAvulso = PlanoAvulso("BRONZE")
+    var plano: Plano = PlanoAvulso("BRONZE")
     val jogosBuscados = mutableListOf<Jogo?>()
     val jogosAlugados = mutableListOf<Aluguel>()
 
@@ -71,7 +71,7 @@ data class Gamer(
         return aluguel
     }
 
-    fun alugueisNoMes(mes: Int): List<Jogo> {
+    fun jogosDoMes(mes: Int): List<Jogo> {
         return jogosAlugados
             .filter { aluguel -> aluguel.periodo.dataInicial.month.value == mes }
             .map { aluguel -> aluguel.jogo }
