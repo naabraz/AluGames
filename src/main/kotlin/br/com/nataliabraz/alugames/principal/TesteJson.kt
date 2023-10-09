@@ -15,11 +15,23 @@ fun main() {
 
     val gamerCaroline = listaGamers[3]
     val jogoResidentVillage = listaJogoJson[10]
-    val jogoSpiderMan = listaJogoJson[13]
-    val jogoTheLastOfUs = listaJogoJson[2]
+    jogoResidentVillage.recomendar(5)
+    jogoResidentVillage.recomendar(8)
+    jogoResidentVillage.recomendar(3)
 
-//    println(gamerCaroline)
-//    println(jogoResidentVillage)
+    val jogoSpiderMan = listaJogoJson[13]
+    jogoSpiderMan.recomendar(8)
+    jogoSpiderMan.recomendar(7)
+    jogoSpiderMan.recomendar(10)
+
+    val jogoTheLastOfUs = listaJogoJson[2]
+    jogoTheLastOfUs.recomendar(10)
+    jogoTheLastOfUs.recomendar(10)
+    jogoTheLastOfUs.recomendar(9)
+
+    println(jogoResidentVillage)
+    println(jogoSpiderMan)
+    println(jogoTheLastOfUs)
 
     val periodo1 = Periodo(LocalDate.now(), LocalDate.now().plusDays(7))
     val periodo2 = Periodo(LocalDate.now(), LocalDate.now().plusDays(3))
@@ -44,7 +56,7 @@ fun main() {
     println(gamerCamila.jogosAlugados)
 
     gamerCamila.recomendar(7)
-    gamerCamila.recomendar(10)
+    gamerCamila.recomendar(5)
     gamerCamila.recomendar(8)
     println(gamerCamila)
 

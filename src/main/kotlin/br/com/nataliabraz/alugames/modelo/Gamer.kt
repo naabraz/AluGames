@@ -29,7 +29,11 @@ data class Gamer(
         get() = listaNotas.average()
 
     override fun recomendar(nota: Int) {
-        listaNotas.add(nota)
+        if (nota in 1..10) {
+            listaNotas.add(nota)
+        } else {
+            println("Recomendação com nota inválida: $nota.")
+        }
     }
 
     constructor(nome: String,
