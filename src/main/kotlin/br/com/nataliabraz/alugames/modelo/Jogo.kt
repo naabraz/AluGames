@@ -1,8 +1,10 @@
 package br.com.nataliabraz.alugames.modelo
 
+import com.google.gson.annotations.Expose
+
 data class Jogo(
-    val titulo: String,
-    val capa: String): Recomendavel {
+    @Expose val titulo: String,
+    @Expose val capa: String): Recomendavel {
 
     var descricao: String? = null
     var preco = 0.0
