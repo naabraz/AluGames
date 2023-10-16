@@ -1,7 +1,9 @@
 package br.com.nataliabraz.alugames.modelo
 
+import br.com.nataliabraz.alugames.utilitario.formatoComDuasCasasDecimais
 import java.lang.IllegalArgumentException
 import java.util.Scanner
+import kotlin.math.roundToInt
 import kotlin.random.Random
 
 data class Gamer(
@@ -27,7 +29,7 @@ data class Gamer(
     val jogosRecomendados = mutableListOf<Jogo>()
 
     override val media: Double
-        get() = listaNotas.average()
+        get() = listaNotas.average().formatoComDuasCasasDecimais()
 
     override fun recomendar(nota: Int) {
         if (nota in 1..10) {
