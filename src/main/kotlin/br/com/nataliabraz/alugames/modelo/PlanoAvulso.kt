@@ -14,4 +14,10 @@ class PlanoAvulso(tipo: String): Plano(tipo) {
 
         return valorOriginal.setScale(2, RoundingMode.HALF_EVEN)
     }
+
+    override fun toString(): String {
+        return "Plano Avulso\n" +
+                "Tipo: $tipo\n" +
+                "Id: $id\n"
+    }
 }

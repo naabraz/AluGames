@@ -11,17 +11,19 @@ data class Jogo(
 
     var descricao: String? = null
     var preco = BigDecimal("0.0")
+    private var id = 0
+    private val listaNotas = mutableListOf<Int>()
 
     constructor(
         titulo: String,
         capa: String,
         preco: Double,
-        descricao: String): this(titulo, capa) {
+        descricao: String,
+        id: Int = 0): this(titulo, capa) {
         this.preco = BigDecimal(preco).setScale(2, RoundingMode.HALF_EVEN)
         this.descricao = descricao
+        this.id = id
     }
-
-    private val listaNotas = mutableListOf<Int>()
 
     override val media: Double
         get() = listaNotas.average().formatoComDuasCasasDecimais()
@@ -36,6 +38,7 @@ data class Jogo(
                 "Capa: $capa \n" +
                 "Descrição: $descricao \n" +
                 "Preço: $preco \n" +
-                "Reputação: $media"
+                "Reputação: $media\n" +
+                "Id: $id"
     }
 }

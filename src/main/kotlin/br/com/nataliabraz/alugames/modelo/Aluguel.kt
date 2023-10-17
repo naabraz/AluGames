@@ -5,9 +5,10 @@ data class Aluguel(
     val jogo: Jogo,
     val periodo: Periodo) {
 
-    val valorDoAluguel = gamer.plano.obterValor(this)
+    private val valorDoAluguel = gamer.plano.obterValor(this)
+    var id = 0
 
     override fun toString(): String {
-        return "\n Aluguel do ${jogo.titulo} por ${gamer.nome} pelo valor de: R$: ${valorDoAluguel}"
+        return "Aluguel do ${jogo.titulo} por ${gamer.nome} pelo valor de: R$: $valorDoAluguel"
     }
 }

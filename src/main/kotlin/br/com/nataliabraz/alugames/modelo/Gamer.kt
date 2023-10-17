@@ -19,12 +19,13 @@ data class Gamer(
             }
         }
 
+    private var id = 0
     var idInterno: String? = null
         private set
 
     var plano: Plano = PlanoAvulso("BRONZE")
     val jogosBuscados = mutableListOf<Jogo?>()
-    val jogosAlugados = mutableListOf<Aluguel>()
+    private val jogosAlugados = mutableListOf<Aluguel>()
     private val listaNotas = mutableListOf<Int>()
     val jogosRecomendados = mutableListOf<Jogo>()
 
@@ -47,14 +48,16 @@ data class Gamer(
     constructor(nome: String,
                 email: String,
                 dataNascimento: String,
-                usuario: String): this(nome, email) {
+                usuario: String,
+                id: Int = 0): this(nome, email) {
         this.dataNascimento = dataNascimento
         this.usuario = usuario
+        this.id = id
         criarIdInterno()
     }
 
     init {
-        if (nome.isNullOrBlank()) {
+        if (nome.isBlank()) {
             throw IllegalArgumentException("Nome está em branco")
         }
         this.email = validarEmail()
@@ -67,17 +70,18 @@ data class Gamer(
                 "Data de Nascimento: $dataNascimento \n" +
                 "Usuário: $usuario \n" +
                 "ID Interno: $idInterno\n" +
-                "Reputação: $media"
+                "Reputação: $media\n" +
+                "Id: $id"
     }
 
-    fun criarIdInterno() {
+    private fun criarIdInterno() {
         val numero = Random.nextInt(10000)
         val tag = String.format("%04d", numero)
 
         idInterno = "$usuario#$tag"
     }
 
-    fun validarEmail(): String {
+    private fun validarEmail(): String {
         val regex = Regex("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")
         if (regex.matches(email)) {
             return email
