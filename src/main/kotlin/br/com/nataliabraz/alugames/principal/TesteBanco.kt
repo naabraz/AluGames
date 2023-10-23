@@ -1,8 +1,9 @@
 package br.com.nataliabraz.alugames.principal
 
 import br.com.nataliabraz.alugames.dados.Banco
+import br.com.nataliabraz.alugames.modelo.Jogo
 
 fun main() {
-    val conexao = Banco.obterConexao()
-    println(conexao)
+    val listaJogos: List<Jogo> = Banco.getJogos()
+    print(listaJogos)
 }
