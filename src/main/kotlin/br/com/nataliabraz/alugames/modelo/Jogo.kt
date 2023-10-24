@@ -4,13 +4,19 @@ import br.com.nataliabraz.alugames.utilitario.formatoComDuasCasasDecimais
 import com.google.gson.annotations.Expose
 import java.math.BigDecimal
 import java.math.RoundingMode
+import javax.persistence.*
 
+@Entity
+@Table (name = "jogos")
 data class Jogo(
     @Expose val titulo: String,
     @Expose val capa: String): Recomendavel {
 
     var descricao: String? = null
     var preco = BigDecimal("0.0")
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private var id = 0
     private val listaNotas = mutableListOf<Int>()
 
