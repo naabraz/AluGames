@@ -3,7 +3,6 @@ package br.com.nataliabraz.alugames.modelo
 import br.com.nataliabraz.alugames.utilitario.formatoComDuasCasasDecimais
 import java.lang.IllegalArgumentException
 import java.util.Scanner
-import kotlin.math.roundToInt
 import kotlin.random.Random
 
 data class Gamer(
@@ -47,8 +46,8 @@ data class Gamer(
 
     constructor(nome: String,
                 email: String,
-                dataNascimento: String,
-                usuario: String,
+                dataNascimento: String?,
+                usuario: String?,
                 id: Int = 0): this(nome, email) {
         this.dataNascimento = dataNascimento
         this.usuario = usuario
