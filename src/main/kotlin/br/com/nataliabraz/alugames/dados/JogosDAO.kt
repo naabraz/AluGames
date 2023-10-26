@@ -3,7 +3,7 @@ package br.com.nataliabraz.alugames.dados
  import br.com.nataliabraz.alugames.modelo.Jogo
  import javax.persistence.EntityManager
 
-class JogosDAO(val manager: EntityManager) {
+class JogosDAO(private val manager: EntityManager) {
     fun getJogos(): List<Jogo> {
         val query = manager.createQuery("FROM JogoEntity", JogoEntity::class.java)
         return query.resultList.map { entity -> Jogo(

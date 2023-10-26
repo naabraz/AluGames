@@ -14,23 +14,16 @@
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="38971aa1-46bd-47a0-9103-102341e9956c">
       <console name="Connection" type="STANDARD" schema="alugames" session="Main"><![CDATA[select
-    j.capa,
-    j.descricao,
-    j.id,
-    j.preco,
-    j.titulo
+    g.nome
 from
-    jogos j;]]></console>
+    gamers g;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="38971aa1-46bd-47a0-9103-102341e9956c" object-ref="schemas/alugames/tables/gamers" />
-      <object connection-id="38971aa1-46bd-47a0-9103-102341e9956c" object-ref="schemas/alugames/tables/jogos" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="38971aa1-46bd-47a0-9103-102341e9956c" dataset="alugames.gamers" active-filter-id="" />

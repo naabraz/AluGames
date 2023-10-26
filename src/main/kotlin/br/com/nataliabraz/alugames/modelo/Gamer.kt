@@ -18,7 +18,7 @@ data class Gamer(
             }
         }
 
-    private var id = 0
+    var id = 0
     var idInterno: String? = null
         private set
 

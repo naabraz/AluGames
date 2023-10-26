@@ -10,6 +10,5 @@ class GamerEntity(
     val dataNascimento: String? = null,
     val usuario: String? = null,
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Int = 0) {
-
+    var id: Int = 0) {
 }
