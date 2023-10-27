@@ -12,7 +12,7 @@ data class Jogo(
     var descricao: String? = null
     var preco = BigDecimal("0.0")
 
-    private var id = 0
+    var id = 0
     private val listaNotas = mutableListOf<Int>()
 
     constructor(
