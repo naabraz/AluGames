@@ -3,7 +3,7 @@ package br.com.nataliabraz.alugames.modelo
 import java.math.BigDecimal
 import java.math.RoundingMode
 
-class PlanoAvulso(tipo: String): Plano(tipo) {
+class PlanoAvulso(tipo: String, id: Int = 0): Plano(tipo, id) {
 
     override fun obterValor(aluguel: Aluguel): BigDecimal {
         var valorOriginal = super.obterValor(aluguel)

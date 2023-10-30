@@ -5,9 +5,9 @@ import java.math.RoundingMode
 
 class PlanoAssinatura(
     tipo: String,
-    private val mensalidade: BigDecimal,
-    private val jogosIncluidos: Int,
-    private val percentualDescontoReputacao: BigDecimal,
+    val mensalidade: BigDecimal,
+    val jogosIncluidos: Int,
+    val percentualDescontoReputacao: BigDecimal,
     id: Int = 0): Plano(tipo) {
 
     override fun obterValor(aluguel: Aluguel): BigDecimal {
