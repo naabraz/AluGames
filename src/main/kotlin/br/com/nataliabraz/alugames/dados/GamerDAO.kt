@@ -1,6 +1,8 @@
 package br.com.nataliabraz.alugames.dados
 
 import br.com.nataliabraz.alugames.modelo.Gamer
+import br.com.nataliabraz.alugames.utilitario.toEntity
+import br.com.nataliabraz.alugames.utilitario.toModel
 import javax.persistence.EntityManager
 
 class GamerDAO(manager: EntityManager): DAO<Gamer, GamerEntity>(
@@ -8,11 +10,12 @@ class GamerDAO(manager: EntityManager): DAO<Gamer, GamerEntity>(
     GamerEntity::class.java) {
     override fun toEntity(objeto: Gamer): GamerEntity {
         return GamerEntity(
+            objeto.id,
             objeto.nome,
             objeto.email,
             objeto.dataNascimento,
             objeto.usuario,
-            objeto.id)
+            objeto.plano.toEntity())
     }
 
     override fun toModel(entity: GamerEntity): Gamer {
@@ -21,6 +24,6 @@ class GamerDAO(manager: EntityManager): DAO<Gamer, GamerEntity>(
             entity.email,
             entity.dataNascimento,
             entity.usuario,
-            entity.id)
+            entity.id).apply { plano = entity.plano.toModel() }
     }
 }
