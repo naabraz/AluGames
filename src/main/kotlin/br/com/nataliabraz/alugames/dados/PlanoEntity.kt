@@ -1,7 +1,6 @@
 package br.com.nataliabraz.alugames.dados
 
 import javax.persistence.*
-
 @Entity
 @Table(name = "planos")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)

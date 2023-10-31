@@ -12,5 +12,6 @@ class GamerEntity(
     val dataNascimento: String? = null,
     val usuario: String? = null,
     @ManyToOne
-    val plano: PlanoEntity = PlanoAvulsoEntity()) {
+    val plano: PlanoEntity = PlanoAvulsoEntity()
+) {
 }

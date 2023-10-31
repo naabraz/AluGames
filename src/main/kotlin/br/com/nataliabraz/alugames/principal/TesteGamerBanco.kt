@@ -10,9 +10,9 @@ fun main(){
 
     val manager = Banco.getEntityManager()
     val gamerDAO = GamerDAO(manager)
-    val planosDAO = PlanosDAO(manager)
-
-    gamer.plano = planosDAO.recuperarPeloId(3)
+//    val planosDAO = PlanosDAO(manager)
+//
+//    gamer.plano = planosDAO.recuperarPeloId(3)
 
     gamerDAO.adicionar(gamer)
 
