@@ -16,10 +16,10 @@ fun main() {
     val planosDAO = PlanosDAO(manager)
 
     planosDAO.adicionar(avulso)
-//    planosDAO.adicionar(prata)
-//    planosDAO.adicionar(ouro)
-//    planosDAO.adicionar(platina)
-//    planosDAO.adicionar(diamante)
+    planosDAO.adicionar(prata)
+    planosDAO.adicionar(ouro)
+    planosDAO.adicionar(platina)
+    planosDAO.adicionar(diamante)
 
     val listaPlanos = planosDAO.getLista()
     print(listaPlanos)

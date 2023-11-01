@@ -8,7 +8,7 @@ class PlanoAssinatura(
     val mensalidade: BigDecimal,
     val jogosIncluidos: Int,
     val percentualDescontoReputacao: BigDecimal,
-    id: Int = 0): Plano(tipo) {
+    id: Int = 0): Plano(tipo, id) {
 
     override fun obterValor(aluguel: Aluguel): BigDecimal {
         val totalJogosNoMes = aluguel.gamer.jogosDoMes(aluguel.periodo.dataInicial.monthValue).size+1

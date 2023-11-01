@@ -1,7 +1,6 @@
 package br.com.nataliabraz.alugames.principal
 
 import br.com.nataliabraz.alugames.dados.Banco
-import br.com.nataliabraz.alugames.dados.GamerDAO
 import br.com.nataliabraz.alugames.dados.JogosDAO
 import br.com.nataliabraz.alugames.modelo.Gamer
 import br.com.nataliabraz.alugames.modelo.Jogo
@@ -9,26 +8,19 @@ import br.com.nataliabraz.alugames.modelo.Jogo
 fun main() {
     val jogo = Jogo("The Last of Us Part I", "https://cdn.cloudflare.steamstatic.com/steam/apps/1888930/header.jpg?t=1686864554", 5.99,"Uma aventura pós-apocalíptica de sobrevivência em um mundo infestado por zumbis e facções em conflito.")
     val jogo2 = Jogo("Dandara", "https://cdn.cloudflare.steamstatic.com/steam/apps/612390/header.jpg?t=1674055293", 9.99, "Um jogo de plataforma e ação com elementos de metroidvania, onde você controla a heroína Dandara em sua luta para libertar um mundo repleto de opressão e tirania.")
-//    val gamer = Gamer("Kamila", "kami@email.com","04/10/1991", "kami")
-//    val gamer2 = Gamer("Priscila", "pri@email.com","14/11/1991", "pri")
 
     val manager = Banco.getEntityManager()
     val jogoDAO = JogosDAO(manager)
-//    val gamerDAO = GamerDAO(manager)
 
-    jogoDAO.adicionar(jogo2)
-//    gamerDAO.adicionar(gamer)
+    jogoDAO.adicionar(jogo)
 
 //    val jogoRecuperado = jogoDAO.recuperarPeloId(3)
 //    println(jogoRecuperado)
-
 //    jogoDAO.apagar(3)
 
     val listaJogos: List<Jogo> = jogoDAO.getLista()
-//    val listaGamers: List<Gamer> = gamerDAO.getLista()
 
     print(listaJogos)
-//    print(listaGamers)
 
     manager.close()
 }
