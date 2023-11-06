@@ -5,7 +5,7 @@ data class Aluguel(
     val jogo: Jogo,
     val periodo: Periodo) {
 
-    private val valorDoAluguel = gamer.plano.obterValor(this)
+    val valorDoAluguel = gamer.plano.obterValor(this)
     var id = 0
 
     override fun toString(): String {

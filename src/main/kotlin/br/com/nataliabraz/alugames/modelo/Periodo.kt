@@ -2,8 +2,10 @@ package br.com.nataliabraz.alugames.modelo
 
 import java.time.LocalDate
 import java.time.Period
+import javax.persistence.Embeddable
 
-data class Periodo(val dataInicial: LocalDate,
-                   val dataFinal: LocalDate) {
+@Embeddable
+data class Periodo(val dataInicial: LocalDate = LocalDate.now(),
+                   val dataFinal: LocalDate = LocalDate.now().plusDays(7)) {
     val emDias = Period.between(dataInicial, dataFinal).days
 }

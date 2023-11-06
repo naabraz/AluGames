@@ -27,6 +27,7 @@
     <filter-actions connection-id="38971aa1-46bd-47a0-9103-102341e9956c" dataset="alugames.planos" active-filter-id="" />
     <filter-actions connection-id="38971aa1-46bd-47a0-9103-102341e9956c" dataset="alugames.gamers" active-filter-id="" />
     <filter-actions connection-id="38971aa1-46bd-47a0-9103-102341e9956c" dataset="alugames.jogos" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="38971aa1-46bd-47a0-9103-102341e9956c" dataset="alugames.aluguel" active-filter-id="" />
     <filter-actions connection-id="38971aa1-46bd-47a0-9103-102341e9956c" dataset="alugames2.gamers" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
