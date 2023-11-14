@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="38971aa1-46bd-47a0-9103-102341e9956c">
-      <console name="Connection" type="STANDARD" schema="mysql" session="Main"><![CDATA[DROP DATABASE alugames]]></console>
+      <console name="Connection" type="STANDARD" schema="mysql" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
